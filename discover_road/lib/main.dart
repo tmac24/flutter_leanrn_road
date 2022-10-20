@@ -1,8 +1,6 @@
 import 'package:discover_road/root_page.dart';
 import 'package:flutter/material.dart';
 
-import 'mine_page/mine_page.dart';
-
 void main() {
   runApp(const MyApp());
 }

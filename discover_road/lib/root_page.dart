@@ -1,6 +1,8 @@
 import 'package:discover_road/mine_page/mine_page.dart';
 import 'package:flutter/material.dart';
 
+import 'home_page/home_page.dart';
+
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
@@ -20,7 +22,7 @@ class _MainPageState extends State<MainPage> {
 
   //页面集合
   final List<Widget> _pages = <Widget>[
-    MinePage(),
+    HomePage(),
     MinePage(),
     Container(),
     MinePage(),
