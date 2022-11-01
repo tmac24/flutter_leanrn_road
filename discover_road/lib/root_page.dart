@@ -2,6 +2,7 @@ import 'package:discover_road/mine_page/mine_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page/home_page.dart';
+import 'new_page/new_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class MainPage extends StatefulWidget {
 
 const Map<String, String> _bottomNames = {
   'all': '主页',
-  'favorites': '音乐',
+  'favorites': '新闻',
   'play': '',
   'pic': '小视频',
   'integral': '我的'
@@ -23,7 +24,7 @@ class _MainPageState extends State<MainPage> {
   //页面集合
   final List<Widget> _pages = <Widget>[
     HomePage(),
-    MinePage(),
+    NewsPage(),
     Container(),
     MinePage(),
     MinePage()
@@ -95,10 +96,10 @@ class _MainPageState extends State<MainPage> {
       height: 44,
       margin: EdgeInsets.only(top: 56),
       child: FloatingActionButton(
+        onPressed: _onCreateMedia,
         child: Image.asset(
           'assets/images/icons/play.png',
         ),
-        onPressed: _onCreateMedia,
       ),
     );
   }
@@ -133,7 +134,7 @@ class _mydrawerState extends State<mydrawer> {
       key: _scaffoldKey,
       child: ListView(
         padding: const EdgeInsets.all(0),
-        children: [
+        children: const [
           DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,

@@ -1,5 +1,6 @@
 import 'package:discover_road/home_page/home_model/home_model.dart';
 import 'package:discover_road/macro/define.dart';
+import 'package:discover_road/root_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,9 +15,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('主页'),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => mydrawer()));
+          },
+          icon: const Icon(Icons.menu),
+        ),
+        title: const Text('主页'),
       ),
-      body: XXGrideViewPage2Content(),
+      body: const XXGrideViewPage2Content(),
     );
   }
 }
@@ -27,7 +35,8 @@ class XXGrideViewPage2Content extends StatelessWidget {
   Widget _getListData(context, index) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Color.fromRGBO(233, 233, 233, 0.9), width: 1),
+        border: Border.all(
+            color: const Color.fromRGBO(233, 233, 233, 0.9), width: 1),
       ),
       child: GestureDetector(
         child: Column(
@@ -54,6 +63,7 @@ class XXGrideViewPage2Content extends StatelessWidget {
   }
 
   _tapItem(index, name, context) {
+    // ignore: avoid_print
     print('点击了第$index个，name是：$name');
   }
 
