@@ -8,7 +8,7 @@ class MinePage extends StatefulWidget {
 }
 
 class _MinePageState extends State<MinePage> {
-  List _datas = [
+  final List _datas = [
     'A',
     'B',
     'C',
@@ -18,7 +18,7 @@ class _MinePageState extends State<MinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           '我的',
           style: TextStyle(color: Colors.black),
         ),

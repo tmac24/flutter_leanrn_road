@@ -1,6 +1,6 @@
 import 'package:discover_road/home_page/home_model/home_model.dart';
+import 'package:discover_road/home_page/homedetail_page.dart';
 import 'package:discover_road/macro/define.dart';
-import 'package:discover_road/root_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,11 +17,24 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => mydrawer()));
+            Scaffold.of(context).openDrawer();
+            // Navigator.push(
+            //     context, MaterialPageRoute(builder: (context) => mydrawer()));
           },
           icon: const Icon(Icons.menu),
         ),
+        actions: [
+          // ignore: unnecessary_new
+          new IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const HomeDetailPage()));
+            },
+            icon: const Icon(Icons.face),
+          )
+        ],
         title: const Text('主页'),
       ),
       body: const XXGrideViewPage2Content(),
