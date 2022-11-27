@@ -1,4 +1,5 @@
 import 'package:discover_road/mine_page/mine_page.dart';
+import 'package:discover_road/shoplist_page/shoplist_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page/home_page.dart';
@@ -26,7 +27,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     NewsPage(),
     Container(),
-    MinePage(),
+    RandomWords(),
     MinePage()
   ];
 

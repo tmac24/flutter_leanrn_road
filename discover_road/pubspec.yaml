@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
   get:
+  english_words:
   
 dev_dependencies:
   flutter_test:
