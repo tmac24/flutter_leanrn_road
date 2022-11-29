@@ -1,8 +1,17 @@
 import 'dart:ui';
 
 import 'package:discover_road/macro/define.dart';
+import 'package:discover_road/mine_page/layout/layout_expand.dart';
+import 'package:discover_road/mine_page/layout/layout_row.dart';
 import 'package:discover_road/mine_page/mine_model.dart';
+import 'package:discover_road/mine_page/universal/card_page.dart';
+import 'package:discover_road/mine_page/universal/gride_page.dart';
+import 'package:discover_road/mine_page/universal/list_page.dart';
+import 'package:discover_road/mine_page/universal/stack_page.dart';
 import 'package:flutter/material.dart';
+
+import 'layout/layout_cake.dart';
+import 'layout/layoutbuild_demo.dart';
 
 class MinePage extends StatefulWidget {
   const MinePage({super.key});
@@ -54,47 +63,47 @@ class MineItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints.expand(
-        height: 50.0,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-      padding: const EdgeInsets.fromLTRB(11, 2, 11, 2),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                model.icon,
-                width: 27,
-                height: 27,
-              ),
-              const SizedBox(
-                width: 4,
-              ),
-              Text(
-                model.name,
-                style:
-                    const TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
-              )
-            ],
-          ),
-          SizedBox(
-            width: 150,
-            child: Expanded(
+    return GestureDetector(
+      onTap: () => listItemClick(context, model.name),
+      child: Container(
+        margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+        padding: const EdgeInsets.fromLTRB(11, 2, 11, 2),
+        height: 50,
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 239, 245, 228),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  model.icon,
+                  width: 27,
+                  height: 27,
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  model.name,
+                  style: const TextStyle(
+                      fontSize: 15, fontWeight: FontWeight.w800),
+                )
+              ],
+            ),
+            SizedBox(
+              width: 150,
               child: Text(
                 model.subTitle,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-          )
-        ],
+            // )
+          ],
+        ),
       ),
     );
   }
@@ -107,51 +116,102 @@ class MyHeadAndName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 80,
-      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-      padding: const EdgeInsets.fromLTRB(11, 0, 11, 0),
-      color: Colors.blue,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                model.icon,
-                // width: 60,
-                // height: 60,
-              ),
-              const SizedBox(
-                width: 4,
-              ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(0, 11, 0, 11),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    Text(
-                      model.name,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text(model.subTitle),
-                  ],
+    return GestureDetector(
+      onTap: () {
+        listItemClick(context, model.name);
+      },
+      child: Container(
+        height: 80,
+        margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+        padding: const EdgeInsets.fromLTRB(11, 0, 11, 0),
+        color: Color.fromARGB(255, 163, 188, 208),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  model.icon,
+                  // width: 60,
+                  // height: 60,
                 ),
-              ),
-            ],
-          ),
-          Container(),
-          Image.asset(
-            'assets/yjt@2x.png',
-            width: 24,
-            height: 24,
-          )
-        ],
+                const SizedBox(
+                  width: 4,
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(0, 11, 0, 11),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      Text(
+                        model.name,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Text(model.subTitle),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Container(),
+            Image.asset(
+              'assets/yjt@2x.png',
+              width: 24,
+              height: 24,
+            )
+          ],
+        ),
       ),
+    );
+  }
+}
+
+void listItemClick(context, String name) {
+  // ignore: avoid_print
+  print('个人中心页面：点击了$name');
+  if (name == 'layout（Row、Column）') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MylayouRowAndColum()),
+    );
+  } else if (name == 'layout（Expanded）') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyLayoutExpand()),
+    );
+  } else if (name == 'CakeDemo') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyLayoutCakeDemo()),
+    );
+  } else if (name == 'GridView') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyGrideDemo()),
+    );
+  } else if (name == 'ListView') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyListView()),
+    );
+  } else if (name == 'Stack') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyStack()),
+    );
+  } else if (name == 'Material_Card') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyCard()),
+    );
+  } else if (name == 'layoutBuildDemo') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MylayoutBuild()),
     );
   }
 }

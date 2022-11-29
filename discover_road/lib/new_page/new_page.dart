@@ -31,6 +31,9 @@ class NewsController extends GetxController {
   void getNewsList() async {
     try {
       Map<String, dynamic> map = await API.getNews();
+      if (map["resultcode"] == "112") {
+        return;
+      }
       List list = map["result"];
       newsList = List<NewsModel>.from(
           list.map((jsonMap) => NewsModel.fromMap(jsonMap)));
