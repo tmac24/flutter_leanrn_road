@@ -1,4 +1,4 @@
 import 'dart:ui';
 
-final width = window.physicalSize.width;
-final height = window.physicalSize.height;
+final kWidth = window.physicalSize.width;
+final KWight = window.physicalSize.height;

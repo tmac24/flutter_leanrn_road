@@ -1,3 +1,4 @@
+import 'package:discover_road/home_page/eq_listview.dart';
 import 'package:discover_road/home_page/home_model/home_model.dart';
 import 'package:discover_road/home_page/homedetail_page.dart';
 import 'package:discover_road/macro/define.dart';
@@ -59,7 +60,7 @@ class XXGrideViewPage2Content extends StatelessWidget {
               height: 12,
             ),
             SizedBox(
-              width: width / 2 - 20,
+              width: kWidth / 2 - 20,
               child: Text(
                 homeData[index]['title'],
                 textAlign: TextAlign.center,
@@ -78,6 +79,12 @@ class XXGrideViewPage2Content extends StatelessWidget {
   _tapItem(index, name, context) {
     // ignore: avoid_print
     print('点击了第$index个，name是：$name');
+    if (name == 'ListView') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ListViewEg4()),
+      );
+    }
   }
 
   @override
