@@ -1,3 +1,4 @@
+import 'package:discover_road/macro/define.dart';
 import 'package:flutter/material.dart';
 
 class MyLayoutCakeDemo extends StatefulWidget {
@@ -10,7 +11,8 @@ class _MyLayoutCakeDemoState extends State<MyLayoutCakeDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('蛋糕'),
+        title: Text('$kWidth'),
+        // title: Text('蛋糕'),
       ),
       body: Center(
         child: Container(
@@ -21,7 +23,7 @@ class _MyLayoutCakeDemoState extends State<MyLayoutCakeDemo> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 350,
+                  width: K_FitWidth(350),
                   child: leftColumn,
                 ),
                 // mainImage,

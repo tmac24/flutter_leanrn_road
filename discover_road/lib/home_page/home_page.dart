@@ -4,6 +4,8 @@ import 'package:discover_road/home_page/homedetail_page.dart';
 import 'package:discover_road/macro/define.dart';
 import 'package:flutter/material.dart';
 
+import 'eq_Refresh.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -83,6 +85,11 @@ class XXGrideViewPage2Content extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const ListViewEg4()),
+      );
+    } else if (name == '基础 Widget') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const EgRefreshPage()),
       );
     }
   }
