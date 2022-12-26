@@ -3,8 +3,10 @@ import 'package:discover_road/home_page/home_model/home_model.dart';
 import 'package:discover_road/home_page/homedetail_page.dart';
 import 'package:discover_road/macro/define.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 import 'eq_Refresh.dart';
+import 'eq_loadmore.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -86,10 +88,15 @@ class XXGrideViewPage2Content extends StatelessWidget {
         context,
         MaterialPageRoute(builder: (context) => const ListViewEg4()),
       );
-    } else if (name == '基础 Widget') {
+    } else if (name == '下拉刷新') {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const EgRefreshPage()),
+      );
+    } else if (name == '上拉加载更多') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const LoadMorePage()),
       );
     }
   }

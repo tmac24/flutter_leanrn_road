@@ -1,11 +1,11 @@
 List homeData = [
   {
-    "title": '基础 Widget',
+    "title": '下拉刷新',
     "author": 'Mohamed Chahin',
     "imageUrl": 'https://www.itying.com/images/flutter/1.png',
   },
   {
-    "title": '使用 Material 组件',
+    "title": '上拉加载更多',
     "author": 'Google',
     "imageUrl": 'https://www.itying.com/images/flutter/2.png',
   },

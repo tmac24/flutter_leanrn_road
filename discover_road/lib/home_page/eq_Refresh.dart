@@ -42,7 +42,7 @@ class _EgRefreshPageState extends State<EgRefreshPage> {
       appBar: AppBar(
         // 去掉导航栏下面的阴影
         elevation: 0.0,
-        title: new Text('下拉刷新'),
+        title: const Text('下拉刷新'),
         actions: <Widget>[
           GestureDetector(
             onTap: () {
@@ -50,7 +50,7 @@ class _EgRefreshPageState extends State<EgRefreshPage> {
               _refreshIndicatorkey.currentState?.show();
             },
             child: Container(
-                alignment: Alignment.center, child: const Text('点击下拉')),
+                alignment: Alignment.center, child: const Text('点击下拉 ')),
           ),
         ],
       ),
