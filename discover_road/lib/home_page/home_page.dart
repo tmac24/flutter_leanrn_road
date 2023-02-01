@@ -1,3 +1,4 @@
+import 'package:discover_road/home_page/eg_route.dart';
 import 'package:discover_road/home_page/eq_listview.dart';
 import 'package:discover_road/home_page/home_model/home_model.dart';
 import 'package:discover_road/home_page/homedetail_page.dart';
@@ -97,6 +98,14 @@ class XXGrideViewPage2Content extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const LoadMorePage()),
+      );
+    } else if (name == '网络请求') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const RoutePage(
+                  title: '路由',
+                )),
       );
     }
   }

@@ -57,7 +57,7 @@ class _LoadMorePageState extends State<LoadMorePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('上拉加载更多'),
+        title: const Text('上拉加载更多'),
         elevation: 0.0, //阴影高度
       ),
       body: NotificationListener(
