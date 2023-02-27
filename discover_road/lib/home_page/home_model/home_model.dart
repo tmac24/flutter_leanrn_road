@@ -49,6 +49,16 @@ List homeData = [
     "author": 'Mohamed Chahin',
     "imageUrl": 'https://www.itying.com/images/flutter/3.png',
   },
+  {
+    "title": '页面传值',
+    "author": 'Mohamed Chahin',
+    "imageUrl": 'https://www.itying.com/images/flutter/5.png',
+  },
+  {
+    "title": 'GetX',
+    "author": 'Mohamed Chahin',
+    "imageUrl": 'https://www.itying.com/images/flutter/3.png',
+  },
 ];
 
 List listData = [

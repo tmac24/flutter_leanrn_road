@@ -1,13 +1,13 @@
-import 'package:discover_road/home_page/eg_route.dart';
-import 'package:discover_road/home_page/eq_listview.dart';
+import 'package:discover_road/home_page/secondaryPage/eg_getx.dart';
+import 'package:discover_road/home_page/secondaryPage/eg_route.dart';
+import 'package:discover_road/home_page/secondaryPage/eq_listview.dart';
 import 'package:discover_road/home_page/home_model/home_model.dart';
 import 'package:discover_road/home_page/homedetail_page.dart';
+import 'package:discover_road/home_page/secondaryPage/eq_loadmore.dart';
 import 'package:discover_road/macro/define.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-
-import 'eq_Refresh.dart';
-import 'eq_loadmore.dart';
+import 'secondaryPage/eq_Refresh.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -99,13 +99,18 @@ class XXGrideViewPage2Content extends StatelessWidget {
         context,
         MaterialPageRoute(builder: (context) => const LoadMorePage()),
       );
-    } else if (name == '网络请求') {
+    } else if (name == '页面传值') {
       Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => const RoutePage(
                   title: '路由',
                 )),
+      );
+    } else if (name == 'GetX') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const GetXPage()),
       );
     }
   }
