@@ -1,4 +1,5 @@
 import 'package:discover_road/home_page/secondaryPage/eg_getx.dart';
+import 'package:discover_road/home_page/secondaryPage/eg_getx_tool.dart';
 import 'package:discover_road/home_page/secondaryPage/eg_route.dart';
 import 'package:discover_road/home_page/secondaryPage/eq_listview.dart';
 import 'package:discover_road/home_page/home_model/home_model.dart';
@@ -108,10 +109,9 @@ class XXGrideViewPage2Content extends StatelessWidget {
                 )),
       );
     } else if (name == 'GetX') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const GetXPage()),
-      );
+      Get.to(GetXPage());
+    } else {
+      // Get.to(GetxToolPage());
     }
   }
 

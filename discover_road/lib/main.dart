@@ -1,8 +1,12 @@
+import 'package:discover_road/home_page/secondaryPage/eq_Refresh.dart';
 import 'package:discover_road/root_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GetMaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

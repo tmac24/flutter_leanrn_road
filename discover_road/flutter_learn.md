@@ -35,3 +35,37 @@ Navigator.push(context, MaterialPageRoute(builder: (context) => mydrawer()));
   }
 ```
 
+-----
+
+
+
+## GetX
+
+GetX 是 Flutter 上的一个轻量且强大的解决方案：高性能的状态管理、智能的依赖注入和便捷的路由管理
+
+地址：https://github.com/jonataslaw/getx/blob/master/README.zh-cn.md
+
+- ##### 状态管理
+
+- ##### 路由管理
+
+- ##### 依赖管理
+
+```dart
+//创建你的业务逻辑类，并将所有的变量，方法和控制器放在里面
+class Controller extends GetxController {
+  var count = 0.obs;
+  increment() => count++;
+}
+
+// 使用Get.put()实例化你的类，使其对当下的所有子路由可用。
+final Controller c = Get.put(Controller());
+
+// 用一个简单的Get.to()即可代替Navigator.push那8行，无需上下文！
+Get.to(FirstPage());
+
+// 你可以让Get找到一个正在被其他页面使用的Controller，并将它返回给你。
+final Controller c = Get.find();
+
+```
+
