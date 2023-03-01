@@ -21,4 +21,11 @@ class API {
         "http://apis.juhe.cn/fapig/douyin/billboard?type=hot_video&size=50&key=9eb8ac7020d9bea6048db1f4c6b6d028");
     return jsonDecode(response.toString());
   }
+
+  //喜马拉雅广播
+  static Future<Map<String, dynamic>> getRadios() async {
+    var response =
+        await Dio().get("http://live.ximalaya.com/live-web/v5/homepage");
+    return jsonDecode(response.toString());
+  }
 }

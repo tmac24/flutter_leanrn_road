@@ -18,7 +18,7 @@ import 'package:get/get_connect/connect.dart';
 
 const baseUrl = 'http://gerador-nomes.herokuapp.com/nomes/10';
 
-class Api extends GetConnect {
+class ApiGet extends GetConnect {
 // Get request
   Future<Response> getUser(int id) => get('http://youapi/users/id');
 // Post request
