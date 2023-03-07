@@ -44,7 +44,7 @@ class RadioPage extends GetView<StatelessWidget> {
   Widget build(BuildContext context) {
     final controller = Get.put(RadioController());
     return Scaffold(
-      appBar: AppBar(title: Text('RadioPage')),
+      appBar: AppBar(title: const Text('RadioPage')),
       body: GetBuilder<RadioController>(
         builder: (controller) {
           return Text("${controller.radioList.length}");

@@ -113,12 +113,13 @@ class XXGrideViewPage2Content extends StatelessWidget {
       );
     } else if (name == 'GetX') {
       Get.to(GetXPage());
+    } else if (name == 'easy_refresh') {
+      Get.to(const RefreshPage());
     } else if (name == 'RadioPage') {
-      // Get.to(GetxToolPage());
       Get.to(RadioPage());
+    } else if (name == 'MusicPage') {
+      Get.to(MusicPage());
     } else {
-      // Get.to(GetxToolPage());
-      // Get.to(RefreshPage());
       Get.to(MusicPage());
     }
   }

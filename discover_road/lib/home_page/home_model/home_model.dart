@@ -1,18 +1,28 @@
 List homeData = [
   {
+    "title": 'MusicPage',
+    "author": 'Mohamed Chahin',
+    "imageUrl": 'https://www.itying.com/images/flutter/4.png',
+  },
+  {
     "title": 'RadioPage',
     "author": 'Mohamed Chahin',
     "imageUrl": 'https://www.itying.com/images/flutter/4.png',
   },
   {
-    "title": '下拉刷新',
+    "title": 'easy_refresh',
     "author": 'Mohamed Chahin',
-    "imageUrl": 'https://www.itying.com/images/flutter/1.png',
+    "imageUrl": 'https://www.itying.com/images/flutter/3.png',
   },
   {
-    "title": '上拉加载更多',
-    "author": 'Google',
+    "title": 'GetX',
+    "author": 'Mohamed Chahin',
     "imageUrl": 'https://www.itying.com/images/flutter/2.png',
+  },
+  {
+    "title": '页面传值',
+    "author": 'Mohamed Chahin',
+    "imageUrl": 'https://www.itying.com/images/flutter/5.png',
   },
   {
     "title": '处理手势',
@@ -55,14 +65,14 @@ List homeData = [
     "imageUrl": 'https://www.itying.com/images/flutter/3.png',
   },
   {
-    "title": '页面传值',
+    "title": '下拉刷新',
     "author": 'Mohamed Chahin',
-    "imageUrl": 'https://www.itying.com/images/flutter/5.png',
+    "imageUrl": 'https://www.itying.com/images/flutter/1.png',
   },
   {
-    "title": 'GetX',
-    "author": 'Mohamed Chahin',
-    "imageUrl": 'https://www.itying.com/images/flutter/3.png',
+    "title": '上拉加载更多',
+    "author": 'Google',
+    "imageUrl": 'https://www.itying.com/images/flutter/2.png',
   },
 ];
 
@@ -101,5 +111,5 @@ List listData = [
     "title": 'white-dragon',
     "author": 'Mohamed Chahin',
     "imageUrl": 'https://www.itying.com/images/flutter/7.png',
-  }
+  },
 ];
