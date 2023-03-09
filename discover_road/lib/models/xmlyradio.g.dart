@@ -6,7 +6,7 @@ part of 'xmlyradio.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-xmlyradio _$xmlyradioFromJson(Map<String, dynamic> json) => xmlyradio(
+Xmlyradio _$XmlyradioFromJson(Map<String, dynamic> json) => Xmlyradio(
       (json['radioSquareResults'] as List<dynamic>)
           .map((e) => RadioSquareResults.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -22,7 +22,7 @@ xmlyradio _$xmlyradioFromJson(Map<String, dynamic> json) => xmlyradio(
       json['location'] as String,
     );
 
-Map<String, dynamic> _$xmlyradioToJson(xmlyradio instance) => <String, dynamic>{
+Map<String, dynamic> _$XmlyradioToJson(Xmlyradio instance) => <String, dynamic>{
       'radioSquareResults': instance.radioSquareResults,
       'localRadios': instance.localRadios,
       'topRadios': instance.topRadios,

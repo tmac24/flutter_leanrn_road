@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'xmlyradio.g.dart';
 
 @JsonSerializable()
-class xmlyradio extends Object {
+class Xmlyradio extends Object {
   @JsonKey(name: 'radioSquareResults')
   List<RadioSquareResults> radioSquareResults;
 
@@ -19,7 +19,7 @@ class xmlyradio extends Object {
   @JsonKey(name: 'location')
   String location;
 
-  xmlyradio(
+  Xmlyradio(
     this.radioSquareResults,
     this.localRadios,
     this.topRadios,
@@ -27,10 +27,10 @@ class xmlyradio extends Object {
     this.location,
   );
 
-  factory xmlyradio.fromJson(Map<String, dynamic> srcJson) =>
-      _$xmlyradioFromJson(srcJson);
+  factory Xmlyradio.fromJson(Map<String, dynamic> srcJson) =>
+      _$XmlyradioFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$xmlyradioToJson(this);
+  Map<String, dynamic> toJson() => _$XmlyradioToJson(this);
 }
 
 @JsonSerializable()

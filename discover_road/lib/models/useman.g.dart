@@ -6,12 +6,12 @@ part of 'useman.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-useman _$usemanFromJson(Map<String, dynamic> json) => useman(
+Useman _$UsemanFromJson(Map<String, dynamic> json) => Useman(
       json['name'] as String,
       json['email'] as String,
     );
 
-Map<String, dynamic> _$usemanToJson(useman instance) => <String, dynamic>{
+Map<String, dynamic> _$UsemanToJson(Useman instance) => <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
     };
