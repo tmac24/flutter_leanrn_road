@@ -9,17 +9,25 @@ dependencies:
     sdk: flutter
   # 图片
   cupertino_icons: ^1.0.2
+  
   # 网络请求
   dio: ^4.0.6
   get: ^4.6.1
+  
   # 自动生成Model
   json_annotation:
+  
   # 英文大小写转换
   english_words: 
+  
   # 上拉刷新下拉加载
   flutter_easyrefresh:
+  
   # button组件
   fbutton_nullsafety: ^5.0.0
+
+  # 数据持久化
+  shared_preferences: ^2.0.13
 
   #豆瓣app
   flutter_cache_manager: ^3.3.0
@@ -38,7 +46,7 @@ dependencies:
 
   cached_network_image: ^3.2.0
 
-  shared_preferences: ^2.0.13
+
   
 dev_dependencies:
   build_runner:

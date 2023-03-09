@@ -1,5 +1,5 @@
-import 'package:discover_road/mine_page/mine_page.dart';
-import 'package:discover_road/shoplist_page/shoplist_page.dart';
+import 'package:discover_road/pages/mine_page/mine_page.dart';
+import 'package:discover_road/pages/shoplist_page/shoplist_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page/home_page.dart';

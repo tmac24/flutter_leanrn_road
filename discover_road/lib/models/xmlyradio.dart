@@ -4,25 +4,6 @@ part 'xmlyradio.g.dart';
 
 @JsonSerializable()
 class xmlyradio extends Object {
-  @JsonKey(name: 'ret')
-  int ret;
-
-  @JsonKey(name: 'data')
-  Data data;
-
-  xmlyradio(
-    this.ret,
-    this.data,
-  );
-
-  factory xmlyradio.fromJson(Map<String, dynamic> srcJson) =>
-      _$xmlyradioFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$xmlyradioToJson(this);
-}
-
-@JsonSerializable()
-class Data extends Object {
   @JsonKey(name: 'radioSquareResults')
   List<RadioSquareResults> radioSquareResults;
 
@@ -38,7 +19,7 @@ class Data extends Object {
   @JsonKey(name: 'location')
   String location;
 
-  Data(
+  xmlyradio(
     this.radioSquareResults,
     this.localRadios,
     this.topRadios,
@@ -46,10 +27,10 @@ class Data extends Object {
     this.location,
   );
 
-  factory Data.fromJson(Map<String, dynamic> srcJson) =>
-      _$DataFromJson(srcJson);
+  factory xmlyradio.fromJson(Map<String, dynamic> srcJson) =>
+      _$xmlyradioFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$xmlyradioToJson(this);
 }
 
 @JsonSerializable()

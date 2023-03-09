@@ -1,4 +1,4 @@
-import 'package:discover_road/http/API.dart';
+import 'package:discover_road/common/http/API.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';

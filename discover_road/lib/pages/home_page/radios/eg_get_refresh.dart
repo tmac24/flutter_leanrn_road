@@ -1,8 +1,8 @@
-import 'package:discover_road/home_page/radios/radios_model.dart';
+import 'package:discover_road/pages/home_page/radios/radios_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
-import 'package:discover_road/http/API.dart';
+import 'package:discover_road/common/http/API.dart';
 
 /// 逻辑层
 class MusicController extends GetxController {

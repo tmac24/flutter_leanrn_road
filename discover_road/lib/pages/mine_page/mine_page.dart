@@ -1,13 +1,13 @@
 import 'dart:ui';
 
-import 'package:discover_road/macro/define.dart';
-import 'package:discover_road/mine_page/layout/layout_expand.dart';
-import 'package:discover_road/mine_page/layout/layout_row.dart';
-import 'package:discover_road/mine_page/mine_model.dart';
-import 'package:discover_road/mine_page/universal/card_page.dart';
-import 'package:discover_road/mine_page/universal/gride_page.dart';
-import 'package:discover_road/mine_page/universal/list_page.dart';
-import 'package:discover_road/mine_page/universal/stack_page.dart';
+import 'package:discover_road/common/define.dart';
+import 'package:discover_road/pages/mine_page/layout/layout_expand.dart';
+import 'package:discover_road/pages/mine_page/layout/layout_row.dart';
+import 'package:discover_road/pages/mine_page/mine_model.dart';
+import 'package:discover_road/pages/mine_page/universal/card_page.dart';
+import 'package:discover_road/pages/mine_page/universal/gride_page.dart';
+import 'package:discover_road/pages/mine_page/universal/list_page.dart';
+import 'package:discover_road/pages/mine_page/universal/stack_page.dart';
 import 'package:flutter/material.dart';
 
 import 'layout/layout_cake.dart';

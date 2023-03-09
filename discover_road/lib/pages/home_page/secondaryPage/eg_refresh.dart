@@ -4,7 +4,7 @@ import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
-import '../../http/API.dart';
+import '../../../common/http/API.dart';
 import '../radios/radios_model.dart';
 
 class RefreshPage extends StatefulWidget {

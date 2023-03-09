@@ -1,5 +1,4 @@
-import 'package:discover_road/home_page/secondaryPage/eq_Refresh.dart';
-import 'package:discover_road/root_page.dart';
+import 'package:discover_road/pages/root_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

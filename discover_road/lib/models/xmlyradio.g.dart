@@ -7,16 +7,6 @@ part of 'xmlyradio.dart';
 // **************************************************************************
 
 xmlyradio _$xmlyradioFromJson(Map<String, dynamic> json) => xmlyradio(
-      json['ret'] as int,
-      Data.fromJson(json['data'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$xmlyradioToJson(xmlyradio instance) => <String, dynamic>{
-      'ret': instance.ret,
-      'data': instance.data,
-    };
-
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
       (json['radioSquareResults'] as List<dynamic>)
           .map((e) => RadioSquareResults.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -32,7 +22,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       json['location'] as String,
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$xmlyradioToJson(xmlyradio instance) => <String, dynamic>{
       'radioSquareResults': instance.radioSquareResults,
       'localRadios': instance.localRadios,
       'topRadios': instance.topRadios,
