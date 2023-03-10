@@ -2,12 +2,20 @@
 
 ## JSON转model
 
-格式化工具：使用 [json_serializable](https://pub.dartlang.org/packages/json_serializable)库：https://caijinglong.github.io/json2dart/index_ch.html
+#### 格式化工具：
+
+使用 [json_serializable](https://pub.dartlang.org/packages/json_serializable)库：https://caijinglong.github.io/json2dart/index_ch.html
 
 命令行：
 
 - flutter packages pub run build_runner build (该指令是一次性生成JSON序列化的代码)
 - flutter packages pub run build_runner watch (持续生成指令)
+
+#### 三方：json_model
+
+1. 在工程根目录下创建一个名为 "jsons" 的目录;
+2. 创建或拷贝Json文件到"jsons" 目录中 ;
+3. 运行 `pub run json_model` (Dart VM工程)or `flutter packages pub run json_model`(Flutter中) 命令生成Dart model类，生成的文件默认在"lib/models"目录下
 
 ## GetX
 
