@@ -9,7 +9,10 @@ class CacheConfig {
   late bool enable;
   late num maxAge;
   late num maxCount;
-  
-  factory CacheConfig.fromJson(Map<String,dynamic> json) => _$CacheConfigFromJson(json);
+
+  factory CacheConfig.fromJson(Map<String, dynamic> json) =>
+      _$CacheConfigFromJson(json);
   Map<String, dynamic> toJson() => _$CacheConfigToJson(this);
+
+  void clear() {}
 }

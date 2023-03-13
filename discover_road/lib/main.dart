@@ -1,3 +1,4 @@
+import 'package:discover_road/common/Global.dart';
 import 'package:discover_road/pages/root_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,8 @@ void main() {
     home: MyApp(),
   ));
 }
+
+// void main() => Global.init().then((value) => runApp(MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
