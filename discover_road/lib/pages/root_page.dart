@@ -1,6 +1,9 @@
 import 'package:discover_road/pages/mine_page/mine_page.dart';
 import 'package:discover_road/pages/shoplist_page/shoplist_page.dart';
+import 'package:discover_road/socket/socket_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import 'home_page/home_page.dart';
 import 'new_page/new_page.dart';
@@ -107,6 +110,13 @@ class _MainPageState extends State<MainPage> {
 
   void _onCreateMedia() {
     print('_onCreateMedia');
+    // Get.to（（）=>Page（））
+    Get.to(() => WebSocketRoute());
+    // Get.to(WebSocketRoute());
+    //     Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => WebSocketRoute()),
+    // );
   }
 }
 

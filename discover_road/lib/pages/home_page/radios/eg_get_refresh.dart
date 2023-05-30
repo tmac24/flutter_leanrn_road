@@ -13,7 +13,6 @@ class MusicController extends GetxController {
 
   //广播数据
   List<RadioModel> MusicList = [];
-  // var count = 0.obs;
 
   @override
   void onInit() {
