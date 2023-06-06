@@ -1,7 +1,11 @@
+import 'dart:math';
+
 import 'package:discover_road/pages/home_page/radios/eg_get_refresh.dart';
 import 'package:discover_road/pages/home_page/radios/radios_categories.dart';
+import 'package:discover_road/pages/home_page/radios/yearplan_page.dart';
+import 'package:discover_road/pages/home_page/secondaryPage/RefreshableListExample.dart';
+import 'package:discover_road/pages/home_page/secondaryPage/ScrollableTableExample.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eg_getx.dart';
-import 'package:discover_road/pages/home_page/secondaryPage/eg_getx_tool.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eg_refresh.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eg_route.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eq_listview.dart';
@@ -56,6 +60,7 @@ class _HomePageState extends State<HomePage> {
 class XXGrideViewPage2Content extends StatelessWidget {
   const XXGrideViewPage2Content({super.key});
   Widget _getListData(context, index) {
+    final num = getRandomNum();
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -64,7 +69,8 @@ class XXGrideViewPage2Content extends StatelessWidget {
       child: GestureDetector(
         child: Column(
           children: [
-            Image.network(homeData[index]['imageUrl']),
+            // Image.network(homeData[index]['imageUrl']),
+            Image.network('https://www.itying.com/images/flutter/$num.png'),
             const SizedBox(
               height: 12,
             ),
@@ -85,9 +91,17 @@ class XXGrideViewPage2Content extends StatelessWidget {
     );
   }
 
+  int getRandomNum() {
+    final random = Random();
+    final randomNum = random.nextInt(7) + 1;
+    return randomNum;
+  }
+
   _tapItem(index, name, context) {
     // ignore: avoid_print
     print('点击了第$index个，name是：$name');
+    final num = getRandomNum();
+    print('https://www.itying.com/images/flutter/$num.png');
     if (name == 'ListView') {
       Navigator.push(
         context,
@@ -119,8 +133,12 @@ class XXGrideViewPage2Content extends StatelessWidget {
       Get.to(RadioPage());
     } else if (name == 'MusicPage') {
       Get.to(MusicPage());
+    } else if (name == '表格') {
+      Get.to(const ScrollableTableExample());
+    } else if (name == '列表刷新') {
+      Get.to(RefreshableListExample());
     } else {
-      Get.to(MusicPage());
+      Get.to(YearPlan());
     }
   }
 
