@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:discover_road/pages/home_page/radios/radioSquareModel.dart';
 import 'package:flutter/material.dart';
 
 class API {
@@ -22,10 +23,17 @@ class API {
     return jsonDecode(response.toString());
   }
 
-  //喜马拉雅广播
+  //喜马拉雅广播写法1
   static Future<Map<String, dynamic>> getRadios() async {
     var response =
         await Dio().get("http://live.ximalaya.com/live-web/v5/homepage");
     return jsonDecode(response.toString());
+  }
+
+  //喜马拉雅广播写法2
+  static Future<RadioSquare> getXMRadios() async {
+    var response =
+        await Dio().get("http://live.ximalaya.com/live-web/v5/homepage");
+    return radioSquareFromJson(response.toString());
   }
 }

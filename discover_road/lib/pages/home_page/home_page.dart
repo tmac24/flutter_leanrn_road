@@ -100,8 +100,6 @@ class XXGrideViewPage2Content extends StatelessWidget {
   _tapItem(index, name, context) {
     // ignore: avoid_print
     print('点击了第$index个，name是：$name');
-    final num = getRandomNum();
-    print('https://www.itying.com/images/flutter/$num.png');
     if (name == 'ListView') {
       Navigator.push(
         context,

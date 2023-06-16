@@ -16,7 +16,7 @@ class _RefreshableListExampleState extends State<RefreshableListExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter上拉加载下拉刷新列表示例')),
+      appBar: AppBar(title: const Text('Flutter上拉加载下拉刷新列表示例')),
       body: RefreshIndicator(
         onRefresh: _handleRefresh,
         child: ListView.builder(

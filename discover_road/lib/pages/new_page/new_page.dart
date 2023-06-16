@@ -57,7 +57,7 @@ class NewsPage extends StatelessWidget {
         title: const Text("新闻列表"),
       ),
       body: GetBuilder<NewsController>(
-        builder: (counter) {
+        builder: (counter1) {
           if (counter.isLoading == true) {
             return const Center(
               child: CircularProgressIndicator(),

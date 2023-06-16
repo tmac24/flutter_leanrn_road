@@ -19,6 +19,10 @@
 2. 创建或拷贝Json文件到"jsons" 目录中 ;
 3. 运行 *** pub run json_model ** (Dart VM工程)or *** flutter packages pub run json_model**(Flutter中) 命令生成Dart model类，生成的文件默认在"lib/models"目录下
 
+#### 其他方案
+
+JSON转模型 https://app.quicktype.io
+
 ## GetX
 
 GetX 是 Flutter 上的一个轻量且强大的解决方案：高性能的状态管理、智能的依赖注入和便捷的路由管理
