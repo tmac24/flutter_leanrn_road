@@ -80,6 +80,7 @@ final iconList = DefaultTextStyle.merge(
 
 final leftColumn = Container(
   padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+  color: Color.fromARGB(255, 239, 153, 147),
   child: Column(
     children: [
       titleText,
@@ -91,6 +92,7 @@ final leftColumn = Container(
 );
 
 final titleText = Container(
+  color: Colors.blue,
   padding: EdgeInsets.all(20),
   child: Text(
     'Strawberry Pavlova',
@@ -128,6 +130,7 @@ var stars = Row(
 
 final ratings = Container(
   padding: EdgeInsets.all(20),
+  color: Colors.orange,
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [

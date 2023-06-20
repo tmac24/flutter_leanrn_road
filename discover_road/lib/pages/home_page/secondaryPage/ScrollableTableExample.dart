@@ -22,6 +22,7 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
   final double _cellHeight = 45;
   final ScrollController _titleController = ScrollController();
   final ScrollController _contentController = ScrollController();
+
   @override
   void initState() {
     super.initState();
@@ -50,18 +51,25 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
 
   Container _buildTitleContainer(int i) {
     return Container(
-      decoration: const BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: Colors.black, width: 1),
-          right: BorderSide(color: Colors.black, width: 1),
+      child: GestureDetector(
+        onTap: () {
+          print("点击了${_titleList[i]}");
+        },
+        child: Container(
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(color: Colors.black, width: 1),
+              right: BorderSide(color: Colors.black, width: 1),
+            ),
+          ),
+          alignment: Alignment.center,
+          width: _cellWidth,
+          height: _cellHeight,
+          child: Text(
+            _titleList[i],
+            style: TextStyle(color: Colors.blue),
+          ),
         ),
-      ),
-      alignment: Alignment.center,
-      width: _cellWidth,
-      height: _cellHeight,
-      child: Text(
-        _titleList[i],
-        style: TextStyle(color: Colors.blue),
       ),
     );
   }
@@ -77,19 +85,26 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
   _buildRightContent(int index) {
     List<Widget> list = [];
     for (int i = 0; i < _titleList.length; i++) {
-      list.add(Container(
-        alignment: const Alignment(0, 0),
-        decoration: const BoxDecoration(
-            border: Border(
-                bottom: BorderSide(color: Colors.black, width: 1),
-                right: BorderSide(color: Colors.black, width: 1))),
-        width: _cellWidth,
-        height: _cellHeight,
-        child: Text(
-          "行$index 列${i + 1}",
-          style: TextStyle(color: Colors.black),
+      list.add(
+        Container(
+          alignment: const Alignment(0, 0),
+          decoration: const BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(color: Colors.black, width: 1),
+                  right: BorderSide(color: Colors.black, width: 1))),
+          width: _cellWidth,
+          height: _cellHeight,
+          child: GestureDetector(
+            child: Text(
+              "行$index 列${i + 1}",
+              style: TextStyle(color: Colors.black),
+            ),
+            onTap: () {
+              clickItem(index);
+            },
+          ),
         ),
-      ));
+      );
     }
     return list;
   }
@@ -141,7 +156,9 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
                             return GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  clickItem(index);
+                                },
                                 child: Container(
                                   alignment: const Alignment(0, 0),
                                   decoration: const BoxDecoration(
@@ -192,4 +209,8 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
       ),
     );
   }
+}
+
+void clickItem(num) {
+  print("点击了第${num}行");
 }

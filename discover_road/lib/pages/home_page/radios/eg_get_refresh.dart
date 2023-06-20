@@ -62,7 +62,7 @@ class MusicPage extends StatefulWidget {
 
 class _MusicPageState extends State<MusicPage> {
   late EasyRefreshController _refreshController;
-  int _count = 0;
+  // int _count = 20;
 
   @override
   void initState() {
@@ -78,17 +78,17 @@ class _MusicPageState extends State<MusicPage> {
       appBar: AppBar(title: const Text('MusicPage2')),
       body: GetBuilder<MusicController>(builder: (controller) {
         return EasyRefresh.custom(
-          enableControlFinishRefresh: true,
+          // enableControlFinishRefresh: false,
           enableControlFinishLoad: true,
           controller: _refreshController,
           header: ClassicalHeader(),
           // footer: ClassicalFooter(),
           onRefresh: () async {
-            await Future.delayed(Duration(seconds: 2), () {
-              vc.getMusicList();
-              _count = vc.musicList.length;
-              _refreshController.resetLoadState();
-            });
+            // await Future.delayed(Duration(seconds: 2), () {
+            vc.getMusicList();
+            // _count = vc.musicList.length;
+            _refreshController.resetLoadState();
+            // });
           },
           // onLoad: () async {
           //   await Future.delayed(Duration(seconds: 2), () {
@@ -105,7 +105,7 @@ class _MusicPageState extends State<MusicPage> {
     );
   }
 
-  Widget liverList(List data) {
+  Widget liverList(List list) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
@@ -118,7 +118,7 @@ class _MusicPageState extends State<MusicPage> {
             ),
           );
         },
-        childCount: _count,
+        childCount: list.length,
       ),
     );
   }
