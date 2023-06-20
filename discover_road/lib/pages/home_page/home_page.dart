@@ -10,11 +10,11 @@ import 'package:discover_road/pages/home_page/secondaryPage/eg_refresh.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eg_route.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eq_listview.dart';
 import 'package:discover_road/pages/home_page/home_model/home_model.dart';
-import 'package:discover_road/pages/home_page/homedetail_page.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eq_loadmore.dart';
 import 'package:discover_road/common/define.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import '../difference/shoplist_page.dart';
 import 'secondaryPage/eq_Refresh.dart';
 
 class HomePage extends StatefulWidget {
@@ -44,7 +44,8 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const HomeDetailPage()));
+                      //HomeDetailPage
+                      builder: (context) => const ShopListPage()));
             },
             icon: const Icon(Icons.face),
           )
@@ -105,16 +106,22 @@ class XXGrideViewPage2Content extends StatelessWidget {
         context,
         MaterialPageRoute(builder: (context) => const ListViewEg4()),
       );
-    } else if (name == '下拉刷新') {
+    } else if (name == '表格1') {
+      Get.to(const ScrollableTableExample());
+    } else if (name == '表格2') {
+      Get.to(YearPlan());
+    } else if (name == '系统下拉刷新') {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const EgRefreshPage()),
       );
-    } else if (name == '上拉加载更多') {
+    } else if (name == '系统上拉加载') {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const LoadMorePage()),
       );
+    } else if (name == '系统列表刷新') {
+      Get.to(RefreshableListExample());
     } else if (name == '页面传值') {
       Navigator.push(
         context,
@@ -131,13 +138,7 @@ class XXGrideViewPage2Content extends StatelessWidget {
       Get.to(RadioPage());
     } else if (name == 'MusicPage') {
       Get.to(MusicPage());
-    } else if (name == '表格') {
-      Get.to(const ScrollableTableExample());
-    } else if (name == '列表刷新') {
-      Get.to(RefreshableListExample());
-    } else {
-      Get.to(YearPlan());
-    }
+    } else {}
   }
 
   @override

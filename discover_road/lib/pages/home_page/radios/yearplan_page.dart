@@ -2,19 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/define.dart';
-// import 'package:zos/widgets/common/status_bar.dart';
-
-// void main()=>runApp(YearPlanTest());
-
-class YearPlanTest extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '表格绘制',
-      home: YearPlan(),
-    );
-  }
-}
 
 class YearPlan extends StatefulWidget {
   @override
@@ -138,16 +125,13 @@ class _YearPlanState extends State<YearPlan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        primary: false,
-        elevation: 0,
-        leading: Icon(Icons.arrow_back_ios),
-        title: Text('计划审批'),
+        title: Text('表格2'),
       ), //SingleChildScrollView(
       body: NotificationListener(
         //表格
         child: Container(
           padding: EdgeInsets.only(right: 16, left: 16, top: 16, bottom: 0),
-          margin: EdgeInsets.only(right: 16, left: 16),
+          margin: EdgeInsets.all(10),
           height: 209,
           width: kWidth,
           color: Colors.lightGreen,

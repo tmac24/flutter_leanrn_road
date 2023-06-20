@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-import '../../models/index.dart';
+import '../../../models/index.dart';
 
 class HomeRoute extends StatefulWidget {
   const HomeRoute({super.key});

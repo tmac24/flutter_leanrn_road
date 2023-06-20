@@ -1,10 +1,9 @@
 import 'package:discover_road/pages/mine_page/mine_page.dart';
-import 'package:discover_road/pages/shoplist_page/shoplist_page.dart';
-import 'package:discover_road/socket/socket_page.dart';
+import 'package:discover_road/unused/socket/socket_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
+import 'difference/differencePage.dart';
 import 'home_page/home_page.dart';
 import 'new_page/new_page.dart';
 
@@ -17,7 +16,7 @@ const Map<String, String> _bottomNames = {
   'all': '主页',
   'favorites': '新闻',
   'play': '',
-  'pic': '小视频',
+  'pic': '区别',
   'integral': '我的'
 };
 
@@ -30,7 +29,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     NewsPage(),
     Container(),
-    RandomWords(),
+    DifferencePage(),
     MinePage()
   ];
 
