@@ -107,6 +107,7 @@ FButton(
   text: "FButton #1",
   style: TextStyle(color: Colors.white),
   color: Color(0xffffab91),
+  highlightColor: Colors.blue,
   onPressed: () {},
 )
 ```

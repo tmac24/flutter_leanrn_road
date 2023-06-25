@@ -1,4 +1,9 @@
+import 'package:discover_road/pages/difference/zdyWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import 'delectWidget.dart';
 
 class DifferencePage extends StatefulWidget {
   const DifferencePage({super.key});
@@ -9,8 +14,8 @@ class DifferencePage extends StatefulWidget {
 
 class _DifferencePageState extends State<DifferencePage> {
   final difDatas = [
-    'fsdfdsf',
-    'rewrwer',
+    '删除小部件',
+    '自定义小组件',
     'fsjwrkelw',
     'hrhw',
     '237498f',
@@ -53,6 +58,11 @@ class _DifferencePageState extends State<DifferencePage> {
   }
 
   void _itemClick(String difData) {
+    if (difData == '删除小部件') {
+      Get.to(const DelectWidgetPage());
+    } else if (difData == '自定义小组件') {
+      Get.to(const ZDYWidgetPage());
+    } else {}
     print(difData);
   }
 }
