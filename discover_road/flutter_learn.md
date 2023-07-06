@@ -21,7 +21,7 @@
 
 #### 其他方案
 
-JSON转模型 https://app.quicktype.io
+JSON转模型 https://app.quicktype.io （Null Safety,Make all properties optional都要勾选）
 
 ## GetX
 

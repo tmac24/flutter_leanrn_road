@@ -54,6 +54,11 @@ List homeData = [
     "author": 'Google',
     "imageUrl": 'https://www.itying.com/images/flutter/2.png',
   },
+  {
+    "title": 'WebView',
+    "author": 'Google',
+    "imageUrl": 'https://www.itying.com/images/flutter/2.png',
+  },
 ];
 
 List listData = [

@@ -8,6 +8,7 @@ import 'package:discover_road/pages/home_page/secondaryPage/ScrollableTableExamp
 import 'package:discover_road/pages/home_page/secondaryPage/eg_getx.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eg_refresh.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eg_route.dart';
+import 'package:discover_road/pages/home_page/secondaryPage/eg_webView.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eq_listview.dart';
 import 'package:discover_road/pages/home_page/home_model/home_model.dart';
 import 'package:discover_road/pages/home_page/secondaryPage/eq_loadmore.dart';
@@ -137,8 +138,10 @@ class XXGrideViewPage2Content extends StatelessWidget {
     } else if (name == 'RadioPage') {
       Get.to(RadioPage());
     } else if (name == 'MusicPage') {
-      Get.to(MusicPage());
-    } else {}
+      Get.to(const MusicPage());
+    } else if (name == 'WebView') {
+      Get.to(const WebViewPage());
+    }
   }
 
   @override

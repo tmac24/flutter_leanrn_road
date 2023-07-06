@@ -3,22 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 import 'package:discover_road/common/http/API.dart';
-
-import '../secondaryPage/eg_refresh.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 /// 逻辑层
 class MusicController extends GetxController {
-  //数据个数
-  // var count = 0.obs;
-
-  late final EasyRefreshController _controller = EasyRefreshController();
-
   //广播数据
   List<Category> musicList = [];
 
   @override
   void onInit() {
-    // TODO: implement onInit
     getMusicList();
     super.onInit();
   }
@@ -38,21 +31,6 @@ class MusicController extends GetxController {
   }
 }
 
-// class MusicPage extends GetView<StatelessWidget> {
-//   @override
-//   Widget build(BuildContext context) {
-//     final vc = Get.put(MusicController());
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('MusicPage')),
-//       body: GetBuilder<MusicController>(
-//         builder: (controller) {
-//           return Text("${vc.musicList.length}");
-//         },
-//       ),
-//     );
-//   }
-// }
-
 class MusicPage extends StatefulWidget {
   const MusicPage({super.key});
 
@@ -66,7 +44,6 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _refreshController = EasyRefreshController();
   }
@@ -75,7 +52,26 @@ class _MusicPageState extends State<MusicPage> {
   Widget build(BuildContext context) {
     final vc = Get.put(MusicController());
     return Scaffold(
-      appBar: AppBar(title: const Text('MusicPage2')),
+      appBar: AppBar(
+        title: const Text('MusicPage2'),
+        actions: [
+          // ignore: unnecessary_new
+          new IconButton(
+            onPressed: () {
+              Fluttertoast.showToast(
+                  msg:
+                      "This is Center Short Toast This is Center Short Toast This is Center Short ToastThis is Center Short ToastThis is Center Short ToastThis is Center Short Toast",
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.CENTER,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
+            },
+            icon: const Icon(Icons.face),
+          )
+        ],
+      ),
       body: GetBuilder<MusicController>(builder: (controller) {
         return EasyRefresh.custom(
           // enableControlFinishRefresh: false,

@@ -2,7 +2,7 @@
 //
 //     final radioSquare = radioSquareFromJson(jsonString);
 
-// JSON转模型 https://app.quicktype.io （Null Safety,Make all properties required都要勾选）
+// JSON转模型 https://app.quicktype.io （Null Safety,Make all properties optional都要勾选）
 
 import 'dart:convert';
 
@@ -108,7 +108,7 @@ class Radio {
   int provinceCode;
   int cityCode;
   int start;
-  int end;
+  int? end;
   dynamic favorite;
   String fm;
   bool publish;
@@ -128,7 +128,7 @@ class Radio {
     required this.provinceCode,
     required this.cityCode,
     required this.start,
-    required this.end,
+    this.end,
     required this.favorite,
     required this.fm,
     required this.publish,
@@ -139,16 +139,16 @@ class Radio {
         name: json["name"],
         coverSmall: json["coverSmall"],
         coverLarge: json["coverLarge"],
-        programScheduleId: json["programScheduleId"],
-        programId: json["programId"],
-        programName: json["programName"],
+        programScheduleId: json["programScheduleId"] ?? 0,
+        programId: json["programId"] ?? 0,
+        programName: json["programName"] ?? '',
         playCount: json["playCount"],
         playUrl: PlayUrl.fromJson(json["playUrl"]),
         fmUid: json["fmUid"] ?? 0,
         categoryId: json["categoryId"],
         provinceCode: json["provinceCode"] ?? 0,
         cityCode: json["cityCode"] ?? 0,
-        start: json["start"],
+        start: json["start"] ?? 0,
         end: json["end"],
         favorite: json["favorite"],
         fm: json["fm"],
@@ -231,5 +231,33 @@ class RadioSquareResult {
         "title": title,
         "uri": uri,
         "icon": icon,
+      };
+}
+
+Welcome welcomeFromJson(String str) => Welcome.fromJson(json.decode(str));
+
+String welcomeToJson(Welcome data) => json.encode(data.toJson());
+
+class Welcome {
+  String? greeting;
+  List<String>? instructions;
+
+  Welcome({
+    this.greeting,
+    this.instructions,
+  });
+
+  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
+        greeting: json["greeting"],
+        instructions: json["instructions"] == null
+            ? []
+            : List<String>.from(json["instructions"]!.map((x) => x)),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "greeting": greeting,
+        "instructions": instructions == null
+            ? []
+            : List<dynamic>.from(instructions!.map((x) => x)),
       };
 }
