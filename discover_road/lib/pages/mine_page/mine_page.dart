@@ -93,12 +93,15 @@ class MineItem extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              width: 150,
+            const SizedBox(
+              width: 30,
+            ),
+            Expanded(
               child: Text(
                 model.subTitle,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.right,
               ),
             ),
             // )

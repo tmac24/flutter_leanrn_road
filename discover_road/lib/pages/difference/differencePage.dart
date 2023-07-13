@@ -1,3 +1,4 @@
+import 'package:discover_road/pages/difference/selectButton.dart';
 import 'package:discover_road/pages/difference/zdyWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class _DifferencePageState extends State<DifferencePage> {
   final difDatas = [
     '删除小部件',
     '自定义小组件',
-    'fsjwrkelw',
+    '筛选按钮',
     'hrhw',
     '237498f',
     'hsjk34',
@@ -62,6 +63,8 @@ class _DifferencePageState extends State<DifferencePage> {
       Get.to(const DelectWidgetPage());
     } else if (difData == '自定义小组件') {
       Get.to(const ZDYWidgetPage());
+    } else if (difData == '筛选按钮') {
+      Get.to(const SelectButtonPage());
     } else {}
     print(difData);
   }
