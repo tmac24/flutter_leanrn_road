@@ -159,4 +159,11 @@ Navigator.push(context, MaterialPageRoute(builder: (context) => mydrawer()));
     ```
 
 - 指向source： source ~/.bash_profile
+
 - flutter doctor,检查是否生效
+
+  - 本机路径  /Users/cdql10103/Desktop/flutter/flutter
+
+    export PATH=/Users/cdql10103/Desktop/flutter/flutter/bin:$PATH
+    export PUB_HOSTED_URL=https://pub.flutter-io.cn
+    export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn

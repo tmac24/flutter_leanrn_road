@@ -3,7 +3,7 @@ import 'package:discover_road/unused/socket/socket_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'difference/differencePage.dart';
+import 'Stock/qlhq_page.dart';
 import 'home_page/home_page.dart';
 import 'new_page/new_page.dart';
 
@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     NewsPage(),
     Container(),
-    DifferencePage(),
+    QLHqPage(),
     MinePage()
   ];
 

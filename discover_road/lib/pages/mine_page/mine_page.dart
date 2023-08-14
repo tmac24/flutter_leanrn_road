@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:discover_road/common/define.dart';
+import 'package:discover_road/pages/difference/differencePage.dart';
 import 'package:discover_road/pages/mine_page/layout/layout_expand.dart';
 import 'package:discover_road/pages/mine_page/layout/layout_row.dart';
 import 'package:discover_road/pages/mine_page/mine_model.dart';
@@ -9,6 +10,7 @@ import 'package:discover_road/pages/mine_page/universal/gride_page.dart';
 import 'package:discover_road/pages/mine_page/universal/list_page.dart';
 import 'package:discover_road/pages/mine_page/universal/stack_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'layout/layout_cake.dart';
 import 'layout/layoutbuild_demo.dart';
@@ -35,6 +37,17 @@ class _MinePageState extends State<MinePage> {
           ),
         ),
         backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Get.to(const DifferencePage());
+            // Navigator.push(
+            //     context, MaterialPageRoute(builder: (context) => mydrawer()));
+          },
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: Center(
         child: ListView.builder(
