@@ -1,3 +1,4 @@
+import 'package:discover_road/pages/Stock/qlhq_Astock_page.dart';
 import 'package:discover_road/pages/Stock/qlhq_index_page.dart';
 import 'package:discover_road/pages/Stock/qlhq_sort_page.dart';
 import 'package:discover_road/pages/new_page/new_page.dart';
@@ -9,7 +10,7 @@ class QLHqPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 2,
+      initialIndex: 0,
       length: 3,
       child: Scaffold(
         appBar: AppBar(
@@ -32,7 +33,7 @@ class QLHqPage extends StatelessWidget {
         body: const TabBarView(
           children: <Widget>[
             Center(
-              child: Text("It's cloudy here"),
+              child: HQAStockPage(),
               // child: NewsPage(),
             ),
             Center(

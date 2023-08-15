@@ -7,44 +7,47 @@ class QLHqIndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Container(
-        height: MediaQuery.of(context).size.height - K_FitHeigh(188),
-        color: Colors.white,
-        child: StaggeredGridView.countBuilder(
-          crossAxisCount: 3,
-          padding: const EdgeInsets.only(left: 8, right: 8),
-          itemCount: hqSortData.length,
-          itemBuilder: (context, index) {
-            return _getGridViewItemUI(context, hqSortData, index);
-          },
-          staggeredTileBuilder: (int index) {
-            String title = hqSortData[index]['title'];
-            if (isheader(title)) {
-              return const StaggeredTile.count(3, 0.35);
-            } else {
-              return const StaggeredTile.count(1, 0.8);
-            }
-          },
+      Expanded(
+        flex: 18,
+        child: Container(
+          color: Colors.white,
+          child: StaggeredGridView.countBuilder(
+            crossAxisCount: 3,
+            padding: const EdgeInsets.only(left: 8, right: 8),
+            itemCount: hqSortData.length,
+            itemBuilder: (context, index) {
+              return _getGridViewItemUI(context, hqSortData, index);
+            },
+            staggeredTileBuilder: (int index) {
+              String title = hqSortData[index]['title'];
+              if (isheader(title)) {
+                return const StaggeredTile.count(3, 0.35);
+              } else {
+                return const StaggeredTile.count(1, 0.8);
+              }
+            },
+          ),
         ),
       ),
-      Container(
-        height: 30,
-        width: kWidth,
-        color: const Color.fromARGB(255, 224, 224, 224),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text('港股最少延迟15分钟 ',
-                style: TextStyle(fontSize: 15, color: Colors.black)),
-            Text('免责声明',
-                style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.red,
-                    decoration: TextDecoration.underline,
-                    decorationColor: Colors.red)),
-          ],
+      Expanded(
+        child: Container(
+          width: kWidth,
+          color: const Color.fromARGB(255, 224, 224, 224),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text('港股最少延迟15分钟 ',
+                  style: TextStyle(fontSize: 15, color: Colors.black)),
+              Text('免责声明',
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.red,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.red)),
+            ],
+          ),
         ),
-      ),
+      )
     ]);
   }
 

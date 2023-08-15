@@ -7,28 +7,24 @@ class QLHqSortPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 230, 230, 230),
-      // padding: const EdgeInsets.only(left: 7, right: 7),
-      child: Container(
-        color: Colors.white,
-        child: StaggeredGridView.countBuilder(
-          crossAxisCount: 4,
-          mainAxisSpacing: 11.0,
-          crossAxisSpacing: 11.0,
-          padding: const EdgeInsets.only(left: 8, right: 8),
-          itemCount: hqSortData.length,
-          itemBuilder: (context, index) {
-            return _getGridViewItemUI(context, hqSortData, index);
-          },
-          staggeredTileBuilder: (int index) {
-            String title = hqSortData[index]['title'];
-            if (isheader(title)) {
-              return const StaggeredTile.count(4, 0.55);
-            } else {
-              return const StaggeredTile.count(1, 0.6);
-            }
-          },
-        ),
+      color: Colors.white,
+      margin: const EdgeInsets.only(left: 8, right: 8),
+      child: StaggeredGridView.countBuilder(
+        crossAxisCount: 4,
+        mainAxisSpacing: 11.0,
+        crossAxisSpacing: 11.0,
+        itemCount: hqSortData.length,
+        itemBuilder: (context, index) {
+          return _getGridViewItemUI(context, hqSortData, index);
+        },
+        staggeredTileBuilder: (int index) {
+          String title = hqSortData[index]['title'];
+          if (isheader(title)) {
+            return const StaggeredTile.count(4, 0.55);
+          } else {
+            return const StaggeredTile.count(1, 0.6);
+          }
+        },
       ),
     );
   }

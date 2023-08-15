@@ -37,14 +37,12 @@ class RadioSquare {
 
 class Data {
   List<RadioSquareResult> radioSquareResults;
-  List<Radio> localRadios;
   List<Radio> topRadios;
   List<Category> categories;
   String location;
 
   Data({
     required this.radioSquareResults,
-    required this.localRadios,
     required this.topRadios,
     required this.categories,
     required this.location,
@@ -54,8 +52,6 @@ class Data {
         radioSquareResults: List<RadioSquareResult>.from(
             json["radioSquareResults"]
                 .map((x) => RadioSquareResult.fromJson(x))),
-        localRadios:
-            List<Radio>.from(json["localRadios"].map((x) => Radio.fromJson(x))),
         topRadios:
             List<Radio>.from(json["topRadios"].map((x) => Radio.fromJson(x))),
         categories: List<Category>.from(
@@ -66,7 +62,6 @@ class Data {
   Map<String, dynamic> toJson() => {
         "radioSquareResults":
             List<dynamic>.from(radioSquareResults.map((x) => x.toJson())),
-        "localRadios": List<dynamic>.from(localRadios.map((x) => x.toJson())),
         "topRadios": List<dynamic>.from(topRadios.map((x) => x.toJson())),
         "categories": List<dynamic>.from(categories.map((x) => x.toJson())),
         "location": location,

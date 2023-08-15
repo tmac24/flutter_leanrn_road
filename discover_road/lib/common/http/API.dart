@@ -34,6 +34,7 @@ class API {
   static Future<RadioSquare> getXMRadios() async {
     var response =
         await Dio().get("http://live.ximalaya.com/live-web/v5/homepage");
+    print(response.toString());
     return radioSquareFromJson(response.toString());
   }
 }
