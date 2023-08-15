@@ -1,4 +1,5 @@
 import 'package:discover_road/common/define.dart';
+import 'package:discover_road/pages/Stock/Common/qlhq_common_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -76,43 +77,14 @@ class QLHqIndexPage extends StatelessWidget {
           // Navigator.of(context).pop(index);
         },
         child: Container(
-            // padding: const EdgeInsets.only(left: 8, right: 8),
-            decoration: BoxDecoration(
-              border: Border.all(
-                  color: const Color.fromARGB(255, 130, 129, 129), width: 0.2),
-            ),
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: title.length > 7
-                      ? const TextStyle(fontSize: 14, color: Colors.black)
-                      : const TextStyle(fontSize: 17, color: Colors.black),
-                ),
-                const Text(
-                  '3142.75',
-                  style: TextStyle(
-                      fontSize: 18, color: Color.fromARGB(255, 1, 163, 7)),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    Text(
-                      '-81.31',
-                      style: TextStyle(
-                          fontSize: 14, color: Color.fromARGB(255, 1, 171, 7)),
-                    ),
-                    Text(
-                      '-2.61%',
-                      style: TextStyle(
-                          fontSize: 14, color: Color.fromARGB(255, 2, 173, 8)),
-                    ),
-                  ],
-                )
-              ],
-            )),
+          // padding: const EdgeInsets.only(left: 8, right: 8),
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: const Color.fromARGB(255, 130, 129, 129), width: 0.2),
+          ),
+          alignment: Alignment.center,
+          child: HQIndexItemStock(title, "3208.45", "52.23", "-1.59"),
+        ),
       );
     }
   }

@@ -1,7 +1,10 @@
+import 'package:discover_road/common/define.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:group_list_view/group_list_view.dart';
 
+import 'Common/qlhq_common_widget.dart';
 import 'Model/AStockModel.dart';
 import 'dart:convert' as convert;
 
@@ -19,6 +22,93 @@ class HQAStockPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(
+          flex: 2,
+          child: _getHeadList(),
+        ),
+        Expanded(
+          flex: 1,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                '涨789家  ',
+                style: TextStyle(fontSize: 16, color: Colors.red),
+              ),
+              SizedBox(
+                width: kWidth - K_FitWidth(180),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        color: Colors.red,
+                        height: 4,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 7,
+                      child: Container(
+                        color: Colors.green,
+                        height: 4,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Text(
+                '  跌4250家',
+                style: TextStyle(fontSize: 16, color: Colors.green),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 10,
+          child: _getBodyList(),
+        ),
+      ],
+    );
+  }
+
+  Widget _getHeadList() {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: const BoxDecoration(
+            border: Border(
+              right: BorderSide(
+                  width: 0.5, color: Color.fromARGB(255, 230, 230, 230)),
+            ),
+            color: Colors.white,
+          ),
+          width: kWidth / 3,
+          height: 100,
+          child: InkWell(
+            onTap: () {
+              // Navigator.of(context).pop(index);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                    color: const Color.fromARGB(255, 130, 129, 129),
+                    width: 0.2),
+              ),
+              alignment: Alignment.center,
+              child: HQIndexItemStock("上证指数", "3209.54", "-45.02", "-1.38%"),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _getBodyList() {
     final AStockController controller = Get.put(AStockController());
     return GetBuilder<AStockController>(
       builder: (_) => GroupListView(
