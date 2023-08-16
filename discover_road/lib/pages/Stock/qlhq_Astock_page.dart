@@ -25,50 +25,89 @@ class HQAStockPage extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          flex: 2,
+          flex: 5,
           child: _getHeadList(),
         ),
         Expanded(
-          flex: 1,
+          flex: 2,
+          child: _getRiseOrFallView(),
+        ),
+        Expanded(flex: 2, child: _getNewStockCalendarView()),
+        Expanded(
+          flex: 25,
+          child: _getBodyList(),
+        ),
+      ],
+    );
+  }
+
+  //新股日历
+  Widget _getNewStockCalendarView() {
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            width: 0.5,
+            color: Color.fromARGB(255, 167, 166, 166),
+          ),
+          bottom: BorderSide(
+            width: 0.5,
+            color: Color.fromARGB(255, 167, 166, 166),
+          ),
+        ),
+      ),
+      padding: const EdgeInsets.fromLTRB(11, 0, 11, 0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          Text(
+            '新股日历',
+            style: TextStyle(fontSize: 17, color: Colors.black),
+          ),
+          Text(
+            '今日：1上市',
+            style: TextStyle(
+                fontSize: 14, color: Color.fromARGB(255, 148, 148, 148)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  //涨跌统计
+  Widget _getRiseOrFallView() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          '涨789家  ',
+          style: TextStyle(fontSize: 14, color: Colors.red),
+        ),
+        SizedBox(
+          width: kWidth - K_FitWidth(170),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                '涨789家  ',
-                style: TextStyle(fontSize: 16, color: Colors.red),
-              ),
-              SizedBox(
-                width: kWidth - K_FitWidth(180),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Container(
-                        color: Colors.red,
-                        height: 4,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 7,
-                      child: Container(
-                        color: Colors.green,
-                        height: 4,
-                      ),
-                    ),
-                  ],
+              Expanded(
+                flex: 3,
+                child: Container(
+                  color: Colors.red,
+                  height: 4,
                 ),
               ),
-              const Text(
-                '  跌4250家',
-                style: TextStyle(fontSize: 16, color: Colors.green),
+              Expanded(
+                flex: 7,
+                child: Container(
+                  color: Colors.green,
+                  height: 4,
+                ),
               ),
             ],
           ),
         ),
-        Expanded(
-          flex: 10,
-          child: _getBodyList(),
+        const Text(
+          '  跌4250家',
+          style: TextStyle(fontSize: 14, color: Colors.green),
         ),
       ],
     );
@@ -125,7 +164,7 @@ class HQAStockPage extends StatelessWidget {
         groupHeaderBuilder: (BuildContext context, int section) {
           AStockSort aStockSort = controller.aStockList[section];
           return Container(
-            color: Color.fromARGB(255, 236, 236, 236),
+            color: const Color.fromARGB(255, 236, 236, 236),
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
             child: GestureDetector(
               onTap: () {
