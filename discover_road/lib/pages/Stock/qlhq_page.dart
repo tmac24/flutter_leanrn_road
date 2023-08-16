@@ -1,7 +1,12 @@
+/*
+ * @Author: T-Mac
+ * @Date: 2023-08-11 14:23:08
+ * @Description: 
+ */
+
 import 'package:discover_road/pages/Stock/qlhq_Astock_page.dart';
 import 'package:discover_road/pages/Stock/qlhq_index_page.dart';
 import 'package:discover_road/pages/Stock/qlhq_sort_page.dart';
-import 'package:discover_road/pages/new_page/new_page.dart';
 import 'package:flutter/material.dart';
 
 class QLHqPage extends StatelessWidget {

@@ -1,3 +1,9 @@
+/*
+ * @Author: T-Mac
+ * @Date: 2023-08-14 11:16:27
+ * @Description: 
+ */
+
 import 'package:discover_road/common/define.dart';
 import 'package:discover_road/pages/Stock/Common/qlhq_common_widget.dart';
 import 'package:flutter/material.dart';

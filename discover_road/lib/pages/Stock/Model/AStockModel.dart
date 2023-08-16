@@ -1,3 +1,9 @@
+/*
+ * @Author: T-Mac
+ * @Date: 2023-08-15 13:40:38
+ * @Description: 
+ */
+
 // To parse this JSON data, do
 //
 //     final aStockSort = aStockSortFromJson(jsonString);

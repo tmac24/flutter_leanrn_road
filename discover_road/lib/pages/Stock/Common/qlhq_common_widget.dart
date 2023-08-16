@@ -1,3 +1,9 @@
+/*
+ * @Author: T-Mac
+ * @Date: 2023-08-15 16:48:55
+ * @Description: 行情模块公共的widget
+ */
+
 import 'package:flutter/material.dart';
 
 //行情指数个股UI
