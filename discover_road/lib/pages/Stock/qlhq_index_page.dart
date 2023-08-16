@@ -1,7 +1,7 @@
 /*
  * @Author: T-Mac
  * @Date: 2023-08-14 11:16:27
- * @Description: 
+ * @Description: 行情指数页面
  */
 
 import 'package:discover_road/common/define.dart';

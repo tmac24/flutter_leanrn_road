@@ -1,7 +1,7 @@
 /*
  * @Author: T-Mac
  * @Date: 2023-08-14 15:51:50
- * @Description: 
+ * @Description: 行情A股页面
  */
 
 import 'package:discover_road/common/define.dart';

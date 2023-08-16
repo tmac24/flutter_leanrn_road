@@ -1,7 +1,7 @@
 /*
- * @Author: T-Mac
+ * @Author: T-Mac ctrl+cmd+i
  * @Date: 2023-08-11 14:58:22
- * @Description: 
+ * @Description: 行情分类页面 
  */
 
 import 'package:flutter/material.dart';

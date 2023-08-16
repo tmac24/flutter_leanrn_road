@@ -1,7 +1,7 @@
 /*
  * @Author: T-Mac
  * @Date: 2023-08-11 14:23:08
- * @Description: 
+ * @Description: 行情页面
  */
 
 import 'package:discover_road/pages/Stock/qlhq_Astock_page.dart';

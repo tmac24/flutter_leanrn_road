@@ -1,7 +1,7 @@
 /*
  * @Author: T-Mac
  * @Date: 2023-08-15 13:40:38
- * @Description: 
+ * @Description: 行情A股模型
  */
 
 // To parse this JSON data, do
