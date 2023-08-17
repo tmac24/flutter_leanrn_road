@@ -298,14 +298,14 @@ var risePlateDatas = [
 final List AStockDatas = [
   {
     "header": "领涨板块",
-    "isShow": true,
+    "isShow": false,
     "stock": [
       {"name": "广康文化", "code": "60000", "price": 104.38, "rise": "131.96%"},
     ]
   },
   {
     "header": "涨幅榜",
-    "isShow": true,
+    "isShow": false,
     "stock": [
       {"name": "广康文化", "code": "60000", "price": 104.38, "rise": "131.96%"},
       {"name": "白云机场", "code": "60000", "price": 104.38, "rise": "131.96%"},

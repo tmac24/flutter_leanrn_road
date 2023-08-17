@@ -9,6 +9,8 @@ import 'package:discover_road/pages/Stock/qlhq_index_page.dart';
 import 'package:discover_road/pages/Stock/qlhq_sort_page.dart';
 import 'package:flutter/material.dart';
 
+import 'iostest_page.dart';
+
 class QLHqPage extends StatelessWidget {
   const QLHqPage({super.key});
 
@@ -32,6 +34,9 @@ class QLHqPage extends StatelessWidget {
               Tab(
                 text: '分类',
               ),
+              // Tab(
+              //   text: '原生',
+              // ),
             ],
           ),
         ),
@@ -39,15 +44,16 @@ class QLHqPage extends StatelessWidget {
           children: <Widget>[
             Center(
               child: HQAStockPage(),
-              // child: NewsPage(),
             ),
             Center(
               child: QLHqIndexPage(),
             ),
             Center(
-              // child: Text("It's sunny here"),
               child: QLHqSortPage(),
             ),
+            // Center(
+            //   child: iosTestPage(),
+            // ),
           ],
         ),
       ),
