@@ -164,7 +164,9 @@ class HQAStockPage extends StatelessWidget {
         itemBuilder: (BuildContext context, IndexPath index) {
           AStockSort aStockSort = controller.aStockList[index.section];
           Stock stock = aStockSort.stock[index.index];
-          return _getStockRow(stock);
+          return index.section == 0
+              ? _getRisePlate(stock)
+              : _getStockRow(stock);
         },
         groupHeaderBuilder: (BuildContext context, int section) {
           AStockSort aStockSort = controller.aStockList[section];
@@ -184,12 +186,66 @@ class HQAStockPage extends StatelessWidget {
             ),
           );
         },
-        separatorBuilder: (context, index) => SizedBox(height: 10),
-        sectionSeparatorBuilder: (context, section) => SizedBox(height: 10),
+        separatorBuilder: (context, index) => SizedBox(height: 8),
+        sectionSeparatorBuilder: (context, section) => SizedBox(height: 4),
       ),
     );
   }
 
+  //领涨板块
+  Widget _getRisePlate(Stock stock) {
+    return SizedBox(
+      height: K_FitHeigh(100),
+      child: GridView.count(
+        physics: const NeverScrollableScrollPhysics(), // 设置禁止滚动
+        childAspectRatio: (kWidth / 3) / K_FitHeigh(55), //宽高比
+        crossAxisCount: 3,
+        children: risePlateViews(),
+      ),
+    );
+  }
+
+  List<Widget> risePlateViews() {
+    List<Widget> view = [];
+    for (var stock in risePlateDatas) {
+      view.add(_getRisePlateItem(stock));
+    }
+    return view;
+  }
+
+  Widget _getRisePlateItem(Map stock) {
+    return Container(
+      decoration: BoxDecoration(
+        border:
+            Border.all(color: Color.fromARGB(155, 130, 129, 129), width: 0.2),
+        // color: Colors.red,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            stock["name"],
+            style: TextStyle(fontSize: 18, color: Colors.black),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                '${stock["price"]}',
+                style: const TextStyle(fontSize: 18, color: Colors.red),
+              ),
+              Text(
+                stock["rise"],
+                style: const TextStyle(fontSize: 18, color: Colors.red),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  //其他涨幅榜，涨跌榜等
   Widget _getStockRow(Stock stock) {
     return Container(
       decoration: const BoxDecoration(
@@ -207,7 +263,7 @@ class HQAStockPage extends StatelessWidget {
             children: [
               Text(
                 stock.name,
-                style: const TextStyle(color: Colors.black, fontSize: 19),
+                style: const TextStyle(color: Colors.black, fontSize: 18),
               ),
               Text(
                 stock.code,
@@ -230,7 +286,23 @@ class HQAStockPage extends StatelessWidget {
   }
 }
 
+var risePlateDatas = [
+  {"name": "广康文化", "code": "60000", "price": 56.38, "rise": "0.96%"},
+  {"name": "白云机场", "code": "60000", "price": 26.38, "rise": "5.96%"},
+  {"name": "华人健康", "code": "60000", "price": 78.38, "rise": "75.96%"},
+  {"name": "广康文化", "code": "60000", "price": 15.38, "rise": "5.96%"},
+  {"name": "广康文化", "code": "60000", "price": 8.38, "rise": "45.96%"},
+  {"name": "广康文化", "code": "60000", "price": 13.38, "rise": "4.96%"},
+];
+
 final List AStockDatas = [
+  {
+    "header": "领涨板块",
+    "isShow": true,
+    "stock": [
+      {"name": "广康文化", "code": "60000", "price": 104.38, "rise": "131.96%"},
+    ]
+  },
   {
     "header": "涨幅榜",
     "isShow": true,
