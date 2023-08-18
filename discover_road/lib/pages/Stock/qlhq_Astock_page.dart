@@ -6,6 +6,7 @@
 
 import 'package:discover_road/common/define.dart';
 import 'package:discover_road/pages/Stock/Detail/qlhq_list_page.dart';
+import 'package:discover_road/pages/Stock/Detail/stock_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:group_list_view/group_list_view.dart';
@@ -275,31 +276,36 @@ class HQAStockPage extends StatelessWidget {
         // color: Color.fromARGB(255, 243, 243, 243),
       ),
       margin: const EdgeInsets.fromLTRB(11, 0, 11, 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            children: [
-              Text(
-                stock.name,
-                style: const TextStyle(color: Colors.black, fontSize: 18),
-              ),
-              Text(
-                stock.code,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 119, 119, 119), fontSize: 17),
-              ),
-            ],
-          ),
-          Text(
-            '${stock.price}',
-            style: const TextStyle(color: Colors.black, fontSize: 19),
-          ),
-          Text(
-            stock.rise,
-            style: const TextStyle(color: Colors.black, fontSize: 19),
-          ),
-        ],
+      child: InkWell(
+        onTap: () {
+          Get.to(() => const QLStockDetailPage());
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                Text(
+                  stock.name,
+                  style: const TextStyle(color: Colors.black, fontSize: 18),
+                ),
+                Text(
+                  stock.code,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 119, 119, 119), fontSize: 17),
+                ),
+              ],
+            ),
+            Text(
+              '${stock.price}',
+              style: const TextStyle(color: Colors.black, fontSize: 19),
+            ),
+            Text(
+              stock.rise,
+              style: const TextStyle(color: Colors.black, fontSize: 19),
+            ),
+          ],
+        ),
       ),
     );
   }
