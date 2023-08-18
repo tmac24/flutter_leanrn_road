@@ -5,6 +5,7 @@
  */
 
 import 'package:discover_road/common/define.dart';
+import 'package:discover_road/pages/Stock/Detail/qlhq_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:group_list_view/group_list_view.dart';
@@ -172,17 +173,35 @@ class HQAStockPage extends StatelessWidget {
           AStockSort aStockSort = controller.aStockList[section];
           return Container(
             color: const Color.fromARGB(255, 236, 236, 236),
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-            child: GestureDetector(
-              onTap: () {
-                controller.showOrClose(section);
-              },
-              child: Text(
-                aStockSort.header,
-                style: const TextStyle(
-                  fontSize: 16,
+            padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    controller.showOrClose(section);
+                  },
+                  child: Text(
+                    aStockSort.header,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
-              ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => const HQListPage(
+                          title: '全部A股',
+                        ));
+                  },
+                  child: const Text(
+                    '···',
+                    style: TextStyle(
+                      fontSize: 22,
+                    ),
+                  ),
+                ),
+              ],
             ),
           );
         },

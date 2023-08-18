@@ -4,8 +4,10 @@
  * @Description: 行情分类页面 
  */
 
+import 'package:discover_road/pages/Stock/Detail/qlhq_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:get/get.dart';
 
 class QLHqSortPage extends StatelessWidget {
   const QLHqSortPage({super.key});
@@ -57,7 +59,7 @@ class QLHqSortPage extends StatelessWidget {
     } else {
       return InkWell(
         onTap: () {
-          // Navigator.of(context).pop(index);
+          Get.to(() => HQListPage(title: title));
         },
         child: Container(
           padding: const EdgeInsets.only(left: 8, right: 8),

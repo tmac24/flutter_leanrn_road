@@ -40,6 +40,9 @@ class AStockSort {
       };
 }
 
+List<Stock> stockFromJson(String str) =>
+    List<Stock>.from(json.decode(str).map((x) => Stock.fromJson(x)));
+
 class Stock {
   String name;
   String code;
