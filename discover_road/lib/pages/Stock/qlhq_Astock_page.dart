@@ -5,6 +5,7 @@
  */
 
 import 'package:discover_road/common/define.dart';
+import 'package:discover_road/pages/Stock/Detail/mytest.dart';
 import 'package:discover_road/pages/Stock/Detail/qlhq_list_page.dart';
 import 'package:discover_road/pages/Stock/Detail/stock_detail_page.dart';
 import 'package:flutter/material.dart';
@@ -279,6 +280,7 @@ class HQAStockPage extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Get.to(() => const QLStockDetailPage());
+          // Get.to(() => const MyTestPage());
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
