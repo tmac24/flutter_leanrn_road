@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		292860592ADFC6D100DE0FC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292860582ADFC6D100DE0FC4 /* HomeViewController.swift */; };
+		292861882AE0D65F00DE0FC4 /* MyChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292861872AE0D65F00DE0FC4 /* MyChannel.swift */; };
 		299F4FD52A8E086D0025E0BA /* FLNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F4FD42A8E086D0025E0BA /* FLNativeView.swift */; };
 		299F4FD72A8E08E80025E0BA /* FLPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F4FD62A8E08E80025E0BA /* FLPlugin.swift */; };
 		2F831CA6FAFFF1608A603FD2 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E7825FF4FC0373D722EB97 /* Pods_Runner.framework */; };
@@ -37,6 +38,7 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		292860582ADFC6D100DE0FC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		292861872AE0D65F00DE0FC4 /* MyChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannel.swift; sourceTree = "<group>"; };
 		299F4FD42A8E086D0025E0BA /* FLNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLNativeView.swift; sourceTree = "<group>"; };
 		299F4FD62A8E08E80025E0BA /* FLPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLPlugin.swift; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				299F4FD42A8E086D0025E0BA /* FLNativeView.swift */,
 				292860582ADFC6D100DE0FC4 /* HomeViewController.swift */,
 				299F4FD62A8E08E80025E0BA /* FLPlugin.swift */,
+				292861872AE0D65F00DE0FC4 /* MyChannel.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
 			);
 			path = Runner;
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				292860592ADFC6D100DE0FC4 /* HomeViewController.swift in Sources */,
+				292861882AE0D65F00DE0FC4 /* MyChannel.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				299F4FD52A8E086D0025E0BA /* FLNativeView.swift in Sources */,
 				299F4FD72A8E08E80025E0BA /* FLPlugin.swift in Sources */,

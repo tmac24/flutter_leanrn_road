@@ -15,6 +15,7 @@ import 'package:discover_road/pages/home_page/secondaryPage/eq_loadmore.dart';
 import 'package:discover_road/common/define.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import '../Stock/channel.dart';
 import '../Stock/iostest_page.dart';
 import '../difference/shoplist_page.dart';
 import 'secondaryPage/eq_Refresh.dart';
@@ -44,11 +45,12 @@ class _HomePageState extends State<HomePage> {
           // ignore: unnecessary_new
           new IconButton(
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      //HomeDetailPage
-                      builder: (context) => const ShopListPage()));
+              aaaa();
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         //HomeDetailPage
+              //         builder: (context) => const ShopListPage()));
             },
             icon: const Icon(Icons.face),
           )
@@ -57,6 +59,12 @@ class _HomePageState extends State<HomePage> {
       ),
       body: const XXGrideViewPage2Content(),
     );
+  }
+
+  Future<void> aaaa() async {
+    BXTestChannel.shared.initEventChannel(context);
+    String a = await BXTestChannel.shared.getIosString();
+    print(a);
   }
 }
 

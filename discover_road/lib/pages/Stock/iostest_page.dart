@@ -3,12 +3,16 @@
  * @Date: 2023-08-17 15:40:52
  * @Description: 加载原生视图
  */
+import 'package:discover_road/pages/Stock/channel.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class iosTestPage extends StatelessWidget {
+  // 第一步添加 MethodChannel
+  static const plantform = MethodChannel("test.flutter.io/testAction1");
+
   const iosTestPage({super.key});
 
   @override
@@ -23,6 +27,12 @@ class iosTestPage extends StatelessWidget {
       creationParams: creationParams,
       creationParamsCodec: const StandardMessageCodec(),
     );
+  }
+
+  Future<void> aaaaa() async {
+    String result =
+        await plantform.invokeMethod("testAction1", ['a', 'b', 'c']);
+    print("获取iOS结果：====${result}");
   }
 }
 
