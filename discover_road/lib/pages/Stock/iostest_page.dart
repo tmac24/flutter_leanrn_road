@@ -25,3 +25,65 @@ class iosTestPage extends StatelessWidget {
     );
   }
 }
+
+class MixPage extends StatefulWidget {
+  const MixPage({super.key});
+
+  @override
+  State<MixPage> createState() => _MixPageState();
+}
+
+class _MixPageState extends State<MixPage> {
+// 第一步添加 MethodChannel
+  static const plantform = MethodChannel("test.flutter.io/testAction1");
+// 获取iOS代码的返回值
+  String iosResultString = "";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("混合开发测试"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            buildButton(),
+            Text(
+              "获取iOS结果为：${iosResultString}",
+              style: TextStyle(fontSize: 26),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildButton() {
+    return MaterialButton(
+      onPressed: () {
+        setState(() {
+          testAction1();
+        });
+      },
+      child: Text(
+        "获取调用iOS代码结果",
+        style: TextStyle(fontSize: 30),
+      ),
+      color: Colors.blue,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 0,
+    );
+  }
+
+// 调用iOS代码
+  Future testAction1() async {
+    String result =
+        await plantform.invokeMethod("testAction1", ['a', 'b', 'c']);
+    print("获取iOS结果：====${result}");
+    setState(() {
+      iosResultString = result;
+    });
+  }
+}

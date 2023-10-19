@@ -1,3 +1,8 @@
+/*
+ * @Author: T-Mac
+ * @Date: 2023-06-28 13:55:49
+ * @Description: 
+ */
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -17,7 +22,8 @@ class _WebViewPageState extends State<WebViewPage> {
     // 2
     controller = WebViewController();
     controller.setJavaScriptMode(JavaScriptMode.unrestricted);
-    controller.loadRequest(Uri.parse('https://flutter.cn'));
+    // controller.loadRequest(Uri.parse('https://flutter.cn'));
+    controller.loadRequest(Uri.parse('http://znzg.ql18.com.cn/'));
     // TODO: implement initState
     super.initState();
   }

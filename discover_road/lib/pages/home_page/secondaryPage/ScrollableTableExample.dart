@@ -174,7 +174,7 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
                                   ),
                                 ));
                           },
-                          itemCount: 50,
+                          itemCount: 200,
                         ),
                       ),
                       Expanded(
@@ -184,7 +184,7 @@ class _ScrollableTableExampleState extends State<ScrollableTableExample> {
                         child: Container(
                           width: _titleList.length * _cellWidth,
                           child: ListView.builder(
-                            itemCount: 50,
+                            itemCount: 200,
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
                             itemBuilder: (context, index) {

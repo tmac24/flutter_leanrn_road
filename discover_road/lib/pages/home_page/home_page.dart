@@ -15,8 +15,10 @@ import 'package:discover_road/pages/home_page/secondaryPage/eq_loadmore.dart';
 import 'package:discover_road/common/define.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import '../Stock/iostest_page.dart';
 import '../difference/shoplist_page.dart';
 import 'secondaryPage/eq_Refresh.dart';
+import 'secondaryPage/eq_table.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -114,7 +116,7 @@ class XXGrideViewPage2Content extends StatelessWidget {
     } else if (name == '系统下拉刷新') {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const EgRefreshPage()),
+        MaterialPageRoute(builder: (context) => PaginatedDataTablePage()),
       );
     } else if (name == '系统上拉加载') {
       Navigator.push(
@@ -138,9 +140,11 @@ class XXGrideViewPage2Content extends StatelessWidget {
     } else if (name == 'RadioPage') {
       Get.to(RadioPage());
     } else if (name == 'MusicPage') {
-      Get.to(const MusicPage());
+      // Get.to(const MusicPage());
+      Get.to(const MixPage());
     } else if (name == 'WebView') {
       Get.to(const WebViewPage());
+      // Get.to(const iosTestPage());
     }
   }
 
